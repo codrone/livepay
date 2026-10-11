@@ -2,9 +2,12 @@
 
 > Production-ready, zero-dependency, fully typesafe TypeScript & JavaScript SDK for the **[LivePay API](https://docs.livepay.me)**.
 
+[![CI](https://github.com/codrone/livepay/actions/workflows/ci.yml/badge.svg)](https://github.com/codrone/livepay/actions/workflows/ci.yml)
+[![Documentation](https://img.shields.io/badge/docs-GitHub%20Pages-blue.svg)](https://codrone.github.io/livepay/)
 [![npm version](https://img.shields.io/npm/v/livepay-node.svg)](https://www.npmjs.com/package/livepay-node)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.3-blue.svg)](https://www.typescriptlang.org/)
+[![Zero Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen.svg)](package.json)
 
 ---
 
@@ -180,6 +183,19 @@ try {
 | `client.webhooks` | `constructEvent(options)` | Verify signature & parse typed event in 1 call | Client-side helper |
 | `client.webhooks` | `verifySignature(options)` | Verify HMAC signature header & timestamp tolerance | Client-side helper |
 | `client.webhooks` | `parseEvent(payload)` | Parse & normalize webhook event payload | Client-side helper |
+
+---
+
+## 📚 Documentation & Reference
+
+- **[Interactive SDK API Reference (TypeDoc)](https://codrone.github.io/livepay/)**: Full TypeScript classes, interfaces, and method signatures generated automatically.
+- **[Official LivePay REST API Docs](https://docs.livepay.me)**: Official gateway guides, authentication, endpoints, and webhook payload structures.
+
+---
+
+## 💬 Contact & Support
+
+For SDK inquiries, feedback, or support, please open an [Issue](https://github.com/codrone/livepay/issues) or email [mpalaronald@gmail.com](mailto:mpalaronald@gmail.com).
 
 ---
 

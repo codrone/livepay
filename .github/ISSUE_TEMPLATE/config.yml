@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: SDK Support & Inquiries
+    url: mailto:mpalaronald@gmail.com
+    about: Send general SDK inquiries or direct communications.
+  - name: TypeDoc API Reference
+    url: https://codrone.github.io/livepay/
+    about: Official TypeScript & JavaScript SDK API Reference.
+  - name: LivePay REST API Documentation
+    url: https://docs.livepay.me
+    about: Official LivePay Mobile Money REST API documentation.
+  - name: Security Vulnerabilities
+    url: https://github.com/codrone/livepay/blob/main/SECURITY.md
+    about: Report security issues privately via security policy.

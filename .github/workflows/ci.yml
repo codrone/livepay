@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    name: Test & Build (Node ${{ matrix.node-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [20.x, 22.x]
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Audit Security Dependencies
+        run: npm audit --audit-level=high --omit=dev
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Lint Code
+        run: npm run lint
+
+      - name: Build
+        run: npm run build
+
+      - name: Check Package Exports & Types
+        run: npm run check:exports
+
+      - name: Run Tests with Coverage
+        run: npm run test:coverage

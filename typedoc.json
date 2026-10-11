@@ -2,9 +2,11 @@
   "$schema": "https://typedoc.org/schema.json",
   "entryPoints": ["src/index.ts"],
   "out": "docs",
-  "name": "LivePay Node SDK Documentation",
+  "name": "LivePay Node SDK API Reference",
   "readme": "README.md",
-  "excludePrivate": true,
-  "excludeProtected": true,
-  "plugin": ["typedoc-plugin-markdown"]
+  "includeVersion": true,
+  "navigationLinks": {
+    "Official LivePay API Docs": "https://docs.livepay.me",
+    "GitHub Repository": "https://github.com/codrone/livepay"
+  }
 }

@@ -1,6 +1,10 @@
 export { LivePay } from './client.js';
+export { resolveClientConfig, type ResolvedClientConfig } from './config.js';
 export * from './types/index.js';
 export * from './errors/index.js';
 export * from './services/index.js';
 export { verifySignature } from './utils/crypto.js';
-export { HTTPClient } from './utils/http.js';
+export { HTTPClient, type HTTPClientOptions, type RequestOptions } from './utils/http.js';
+export { DeduplicationCache } from './utils/dedup-cache.js';
+export { RateLimiter, type RateLimitOptions } from './utils/rate-limiter.js';
+export { sanitizePhoneNumber } from './utils/phone.js';

@@ -55,16 +55,19 @@
     "sdk",
     "typescript"
   ],
-  "author": "LivePay Developer Community",
+  "author": "Codrone <mpalaronald@gmail.com>",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/livepay/livepay-node.git"
+    "url": "git+https://github.com/codrone/livepay.git"
   },
   "bugs": {
-    "url": "https://github.com/livepay/livepay-node/issues"
+    "url": "https://github.com/codrone/livepay/issues"
   },
-  "homepage": "https://docs.livepay.me",
+  "homepage": "https://codrone.github.io/livepay/",
   "engines": {
     "node": ">=18.0.0"
   },
