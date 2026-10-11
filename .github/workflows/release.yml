@@ -36,11 +36,11 @@ jobs:
       - name: Format Check
         run: npm run format:check
 
-      - name: Run Tests & Coverage
-        run: npm run test:coverage
-
       - name: Build Package
         run: npm run build
+
+      - name: Run Tests & Coverage
+        run: npm run test:coverage
 
       - name: Validate Exports
         run: npm run check:exports

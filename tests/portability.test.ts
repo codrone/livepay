@@ -1,6 +1,8 @@
-import { describe, it, expect } from 'vitest';
+import { beforeAll, describe, it, expect } from 'vitest';
 import { createRequire } from 'node:module';
 import { resolve } from 'node:path';
+import { existsSync } from 'node:fs';
+import { execSync } from 'node:child_process';
 import { DeduplicationCache } from '../src/utils/dedup-cache.js';
 import { RateLimiter } from '../src/utils/rate-limiter.js';
 import { sanitizePhoneNumber } from '../src/utils/phone.js';
@@ -86,6 +88,14 @@ describe('Portability & SDK Utilities Robustness', () => {
   });
 
   describe('Packaging Portability: Dual ESM & CommonJS Verification', () => {
+    beforeAll(() => {
+      const cjsPath = resolve(__dirname, '../dist/index.cjs');
+      const esmPath = resolve(__dirname, '../dist/index.js');
+      if (!existsSync(cjsPath) || !existsSync(esmPath)) {
+        execSync('npm run build', { cwd: resolve(__dirname, '..'), stdio: 'ignore' });
+      }
+    });
+
     it('should export all public classes and functions in ESM build', async () => {
       const esmPath = resolve(__dirname, '../dist/index.js');
       const esmModule = await import(esmPath);
