@@ -1,5 +1,11 @@
 # livepay-node Changelog
 
+## 1.0.2
+
+### Patch Changes
+
+- 37c13a8: docs: add gateway IP whitelisting notice and serverless configuration guidance for dynamic IP environments (Firebase Functions, AWS Lambda, Vercel)
+
 ## 1.0.1
 
 ### Patch Changes
