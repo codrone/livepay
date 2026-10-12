@@ -8,6 +8,25 @@ updates:
     open-pull-requests-limit: 10
     labels:
       - "dependencies"
+    groups:
+      vitest:
+        patterns:
+          - "vitest*"
+          - "@vitest/*"
+      eslint:
+        patterns:
+          - "eslint*"
+          - "@typescript-eslint/*"
+      typedoc:
+        patterns:
+          - "typedoc*"
+      typescript:
+        patterns:
+          - "typescript"
+          - "@types/*"
+      changesets:
+        patterns:
+          - "@changesets/*"
 
   # Maintain GitHub Actions workflows
   - package-ecosystem: "github-actions"
@@ -18,3 +37,7 @@ updates:
     labels:
       - "actions"
       - "dependencies"
+    groups:
+      actions:
+        patterns:
+          - "*"

@@ -52,16 +52,20 @@ Thank you for your interest in contributing to the **LivePay SDK**! We welcome b
 
 ## Adding Changesets (Releases)
 
-We use [Changesets](https://github.com/changesets/changesets) to manage versioning and changelogs automatically.
+We use [Changesets](https://github.com/changesets/changesets) to manage automated versioning, changelogs, and npm publication.
 
-If your Pull Request introduces code changes, bug fixes, or new features that should trigger a release:
+Any Pull Request that modifies source code (`src/**`) **must** include a changeset file. CI checks for this automatically. PRs modifying only documentation, CI workflows, or tests are exempt.
+
+To add a changeset to your PR:
 
 1. Run the changeset CLI:
    ```bash
    npx changeset
    ```
-2. Select the patch/minor/major version bump and provide a concise summary of your changes.
+2. Select the version bump level (`patch`, `minor`, or `major`) and provide a concise summary of your changes.
 3. Commit the generated markdown file in `.changeset/` along with your PR.
+
+For a full explanation of how and when releases are published to npm, see [RELEASING.md](RELEASING.md).
 
 ---
 
