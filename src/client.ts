@@ -8,6 +8,30 @@ import { AccountsService } from './services/accounts.js';
 import { TransactionsService } from './services/transactions.js';
 import { WebhooksService } from './services/webhooks.js';
 
+/**
+ * LivePay SDK Client.
+ *
+ * Provides typesafe, zero-dependency access to LivePay Mobile Money payment collections,
+ * disbursements, account balance inquiries, and webhook signature verification.
+ *
+ * @remarks
+ * **IP Whitelisting & Network Requirement:**
+ * The LivePay gateway requires strict IP whitelisting for all outbound API requests and
+ * **does not allow wildcard IP whitelisting (`*`)**. If your application runs in a serverless
+ * or dynamic IP environment without a single fixed static IP (e.g., Firebase Cloud Functions,
+ * AWS Lambda, Vercel, Supabase Functions, or Cloudflare Workers) and you experience API rejections
+ * or connection issues, please email **support@livepay.me** for setup guidance.
+ *
+ * @example
+ * ```typescript
+ * import { LivePay } from 'livepay-node';
+ *
+ * const livepay = new LivePay({
+ *   apiKey: process.env.LIVEPAY_API_KEY,
+ *   accountNumber: process.env.LIVEPAY_ACCOUNT_NUMBER,
+ * });
+ * ```
+ */
 export class LivePay {
   public readonly collections: CollectionsService;
   public readonly disbursements: DisbursementsService;

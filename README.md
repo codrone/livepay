@@ -39,6 +39,19 @@ pnpm add livepay-node
 
 ---
 
+## 🌐 IP Whitelisting & Serverless Deployments
+
+> [!IMPORTANT]
+> **Strict Gateway IP Whitelisting Requirement**
+>
+> The LivePay payment gateway enforces strict IP whitelisting for all API calls and **does not allow wildcard IP whitelisting (`*` or open CIDR blocks)**.
+>
+> If your application runs on serverless or cloud infrastructure that lacks a single fixed, static egress IP—such as **Firebase Cloud Functions**, **Google Cloud Run**, **AWS Lambda**, **Vercel**, **Supabase Functions**, or **Cloudflare Workers**—the gateway may reject outgoing API requests.
+>
+> If your server does not have a single fixed IP address and this is causing API requests not to function as intended, please email **[support@livepay.me](mailto:support@livepay.me)** for setup guidance and whitelisting solutions.
+
+---
+
 ## 🚀 Quick Start
 
 ### 1. Initialize the Client with Logging
@@ -195,7 +208,9 @@ try {
 
 ## 💬 Contact & Support
 
-For SDK inquiries, feedback, or support, please open an [Issue](https://github.com/codrone/livepay/issues) or email [mpalaronald@gmail.com](mailto:mpalaronald@gmail.com).
+For SDK inquiries, feedback, or general support, please open an [Issue](https://github.com/codrone/livepay/issues) or email [mpalaronald@gmail.com](mailto:mpalaronald@gmail.com).
+
+For payment gateway IP whitelisting, merchant onboarding, and serverless network configuration, please email **[support@livepay.me](mailto:support@livepay.me)**.
 
 ---
 
