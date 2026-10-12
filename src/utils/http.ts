@@ -33,7 +33,11 @@ export class HTTPClient {
 
   constructor(options: HTTPClientOptions) {
     this.apiKey = options.apiKey;
-    this.baseUrl = (options.baseUrl || 'https://livepay.me/api').replace(/\/+$/, '');
+    let base = options.baseUrl || 'https://livepay.me/api';
+    while (base.endsWith('/')) {
+      base = base.slice(0, -1);
+    }
+    this.baseUrl = base;
     this.timeout = options.timeout ?? 30000;
     this.maxRetries = options.maxRetries ?? 3;
     this.customFetch = options.fetch;
@@ -45,7 +49,10 @@ export class HTTPClient {
 
   public async request<T>(options: RequestOptions): Promise<T> {
     const fetchImpl = this.customFetch || globalThis.fetch;
-    const cleanPath = options.path.replace(/^\/+/, '');
+    let cleanPath = options.path;
+    while (cleanPath.startsWith('/')) {
+      cleanPath = cleanPath.slice(1);
+    }
     let url = `${this.baseUrl}/${cleanPath}`;
 
     if (options.params) {
