@@ -37,7 +37,7 @@ jobs:
         run: npm run build
 
       - name: Create Release PR or Publish to NPM
-        uses: changesets/action@v1
+        uses: changesets/action@v2
         with:
           publish: npx changeset publish
           commit: 'chore: version package'
